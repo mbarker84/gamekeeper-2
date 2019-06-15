@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `The Gamekeeper`,
+    author: `Matthew Little`,
+    description: `Forked from https://gatsby-starter-blog-demo.netlify.com/, with customisations`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `matt_idle`,
     },
   },
   plugins: [
