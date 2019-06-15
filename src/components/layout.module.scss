@@ -1,0 +1,45 @@
+@import "../globals/variables.scss";
+
+body {
+  color: $black;
+  background-color: $background;
+}
+
+a {
+  color: $highlight;
+}
+
+.header {
+  color: $white;
+  margin-bottom: rem(20px);
+
+  @include lg {
+    margin-bottom: rem(60px);
+  }
+}
+
+.main {
+  background-color: $white;
+  padding: rem(20px);
+
+  @include lg {
+    padding: rem(60px);
+  }
+}
+
+.heading {
+  @include lg {
+    font-size: rem(50px);
+  }
+}
+
+.footer {
+  font-size: rem(14px);
+  background-color: darken($background, 10%);
+  color: lighten($background, 15%);
+  padding: rem(20px);
+
+  @include lg {
+    margin-top: rem(60px);
+  }
+}

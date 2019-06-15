@@ -1,0 +1,12 @@
+@import "../globals/variables.scss";
+
+.bio {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(20px);
+}
+
+.body {
+  font-size: rem(14px);
+  margin-bottom: 0;
+}
