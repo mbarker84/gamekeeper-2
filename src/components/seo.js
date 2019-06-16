@@ -68,6 +68,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      script={[
+        {
+          type: "text/javascript",
+          src: "https://identity.netlify.com/v1/netlify-identity-widget.js",
+        },
+      ]}
     />
   )
 }

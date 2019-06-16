@@ -64,6 +64,19 @@ class Layout extends React.Component {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
+        <script>
+          {function() {
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/"
+                  })
+                }
+              })
+            }
+          }}
+        </script>
       </div>
     )
   }
