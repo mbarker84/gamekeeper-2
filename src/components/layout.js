@@ -3,11 +3,12 @@ import { Link } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 import Bio from "./bio"
+import Hero from "./hero/hero"
 import styles from "./layout.module.scss"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, data } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -27,6 +28,7 @@ class Layout extends React.Component {
             </Link>
           </h1>
           <Bio></Bio>
+          <Hero />
         </div>
       )
     } else {
