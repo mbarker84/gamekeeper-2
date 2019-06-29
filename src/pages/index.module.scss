@@ -25,6 +25,10 @@
 
 .date {
   font-size: rem(12px);
+
+  @include md {
+    font-size: rem(14px);
+  }
 }
 
 .articleHeader {

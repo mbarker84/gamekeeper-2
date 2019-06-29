@@ -1,0 +1,11 @@
+@import "../globals/variables.scss";
+
+.date {
+  margin-bottom: rem(20px);
+  display: block;
+  font-size: rem(12px);
+
+  @include md {
+    font-size: rem(14px);
+  }
+}

@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {
@@ -28,7 +27,7 @@ class BlogIndex extends React.Component {
                   </h3>
                   <time
                     className={styles.date}
-                    datetime="node.frontmatter.date"
+                    datetime={node.frontmatter.date}
                   >
                     {node.frontmatter.date}
                   </time>
