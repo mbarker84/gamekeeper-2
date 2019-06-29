@@ -12,10 +12,19 @@ a {
 
 .header {
   color: $white;
-  margin-bottom: rem(20px);
+}
+
+.headerContent {
+  padding: rem(20px);
+  max-width: rem(1200px);
+  margin: 0 auto;
+
+  @include sm {
+    padding: rem(40px) rem(20px);
+  }
 
   @include lg {
-    margin-bottom: rem(60px);
+    padding: rem(80px) rem(20px) rem(60px) rem(20px);
   }
 }
 
@@ -23,13 +32,43 @@ a {
   background-color: $white;
   padding: rem(20px);
 
+  @include sm {
+    padding: rem(40px);
+  }
+
+  @include md {
+    box-shadow: rem(2px) rem(5px) rem(20px) rgba(0, 0, 0, 0.3);
+  }
+
   @include lg {
     padding: rem(60px);
   }
 }
 
+.wrapper {
+  max-width: rem(960px);
+  margin: 0 auto;
+
+  @include sm {
+    padding: rem(20px);
+  }
+
+  @include md {
+    padding: 0 rem(60px) rem(60px);
+    margin: rem(-60px) auto 0 auto;
+    position: relative;
+  }
+}
+
 .heading {
-  @include lg {
+  font-size: rem(28px);
+  margin: 0 0 rem(10px) 0;
+
+  @include sm {
+    font-size: rem(36px);
+  }
+
+  @include md {
     font-size: rem(50px);
   }
 }

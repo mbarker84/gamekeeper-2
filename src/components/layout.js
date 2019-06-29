@@ -10,11 +10,10 @@ class Layout extends React.Component {
   render() {
     const { location, title, children, data } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
 
-    if (location.pathname === rootPath) {
-      header = (
-        <div>
+    const header = (
+      <div>
+        <div className={styles.headerContent}>
           <h1 className={styles.heading}>
             <Link
               style={{
@@ -28,38 +27,18 @@ class Layout extends React.Component {
             </Link>
           </h1>
           <Bio></Bio>
-          <Hero />
         </div>
-      )
-    } else {
-      header = (
-        <h3 className={styles.heading}>
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+        <Hero />
+      </div>
+    )
+
     return (
       <div>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(34),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-          className={styles.outer}
-        >
+        <div className={styles.outer}>
           <header className={styles.header}>{header}</header>
-          <main className={styles.main}>{children}</main>
+          <div className={styles.wrapper}>
+            <main className={styles.main}>{children}</main>
+          </div>
         </div>
         <footer className={styles.footer}>
           © {new Date().getFullYear()}, Built with

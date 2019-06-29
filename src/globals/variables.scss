@@ -42,3 +42,18 @@ $xl: 1600px;
     @content;
   }
 }
+
+// Global styles
+p {
+  font-size: rem(16px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+}

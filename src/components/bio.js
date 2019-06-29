@@ -35,10 +35,10 @@ function Bio() {
             />
             <div className={styles.textBlock}>
               <p className={styles.body}>
-                Written by <strong>{author}</strong>
+                Written by
                 {` `}
                 <a href={`https://twitter.com/${social.twitter}`}>
-                  Follow on Twitter
+                  <strong>{author}</strong>
                 </a>
               </p>
             </div>

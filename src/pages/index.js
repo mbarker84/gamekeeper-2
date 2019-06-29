@@ -20,21 +20,24 @@ class BlogIndex extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <article className={styles.article} key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                    marginTop: 0,
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
+                <header className={styles.articleHeader}>
+                  <h3 className={styles.articleTitle}>
+                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <time
+                    className={styles.date}
+                    datetime="node.frontmatter.date"
+                  >
+                    {node.frontmatter.date}
+                  </time>
+                </header>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
+                  className={styles.excerpt}
                 />
               </article>
             )
