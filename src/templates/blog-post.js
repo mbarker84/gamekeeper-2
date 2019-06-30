@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./blog-post.module.scss"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,10 +20,12 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <time dateTime={post.frontmatter.date} className={styles.date}>
-          {post.frontmatter.date}
-        </time>
+        <header>
+          <h1>{post.frontmatter.title}</h1>
+          <time dateTime={post.frontmatter.date} className={styles.date}>
+            {post.frontmatter.date}
+          </time>
+        </header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -78,6 +81,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail
       }
     }
   }
