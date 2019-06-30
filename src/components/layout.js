@@ -1,44 +1,38 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Fragment } from "react"
 
-import { rhythm } from "../utils/typography"
-import Bio from "./bio"
 import Hero from "./hero/hero"
+import Header from "./header/header"
 import styles from "./layout.module.scss"
 
 class Layout extends React.Component {
-  render() {
-    const { location, title, children, data } = this.props
+  renderHero() {
+    const { children, location } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
 
-    const header = (
-      <div>
-        <div className={styles.headerContent}>
-          <h1 className={styles.heading}>
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h1>
-          <Bio></Bio>
-        </div>
-        <Hero />
-      </div>
-    )
-
-    return (
-      <div>
-        <div className={styles.outer}>
-          <header className={styles.header}>{header}</header>
+    if (location.pathname === rootPath) {
+      return (
+        <Fragment>
+          <Hero></Hero>
           <div className={styles.wrapper}>
             <main className={styles.main}>{children}</main>
           </div>
+        </Fragment>
+      )
+    }
+
+    return (
+      <div className={styles.wrapperArticle}>
+        <main className={styles.main}>{children}</main>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        <div className={styles.outer}>
+          <Header></Header>
+          {this.renderHero()}
         </div>
         <footer className={styles.footer}>
           © {new Date().getFullYear()}, Built with

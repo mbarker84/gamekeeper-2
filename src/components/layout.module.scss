@@ -10,24 +10,6 @@ a {
   color: $highlight;
 }
 
-.header {
-  color: $white;
-}
-
-.headerContent {
-  padding: rem(20px);
-  max-width: rem(1200px);
-  margin: 0 auto;
-
-  @include sm {
-    padding: rem(40px) rem(20px);
-  }
-
-  @include lg {
-    padding: rem(80px) rem(20px) rem(60px) rem(20px);
-  }
-}
-
 .main {
   background-color: $white;
   padding: rem(20px);
@@ -45,7 +27,8 @@ a {
   }
 }
 
-.wrapper {
+.wrapper,
+.wrapperArticle {
   max-width: rem(960px);
   margin: 0 auto;
 
@@ -60,16 +43,9 @@ a {
   }
 }
 
-.heading {
-  font-size: rem(28px);
-  margin: 0 0 rem(10px) 0;
-
-  @include sm {
-    font-size: rem(36px);
-  }
-
+.wrapperArticle {
   @include md {
-    font-size: rem(50px);
+    margin: 0 auto;
   }
 }
 
