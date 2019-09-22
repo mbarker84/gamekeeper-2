@@ -1,0 +1,13 @@
+{
+  "showThemeCredit": true,
+  "name": "The Gamekeeper",
+  "shortDesc": "The keeper of board game reviews on the internet",
+  "url": "https://hylia.website",
+  "authorEmail": "",
+  "authorHandle": "@matt_idle",
+  "authorName": "Matthew Little",
+  "enableThirdPartyComments": false,
+  "maxPostsPerPage": 5,
+  "paymentPointer": "$pay.stronghold.co/1a171baca7344614a63a0b798870af43b82",
+  "faviconPath": "/images/favicon.png"
+}
