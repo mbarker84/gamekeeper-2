@@ -12,14 +12,35 @@
 {% set postListItems = collections.postFeed %}
 
 {# Archive link #}
-{% if postListItems.length < collections.posts.length %} 
+{% if postListItems.length < collections.posts.length %}
   {% set paginationNextText = archiveButtonText %}
   {% set paginationNextUrl = '/archive' %}
 {% endif %}
 
 {% block content %}
   <main id="main-content" tabindex="-1">
-    {% include "partials/components/intro.njk" %}
+    <section class="featured">
+      <div class="inner-wrapper">
+        {% set featuredPost = postListItems[0].data %}
+        {% set tags = featuredPost.tags %}
+
+        <ul class="tags">
+          {% for tag in tags %}
+            <li class="tags__tag">
+              <a href="">{{ tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <time class="featured__date" datetime="{{ featuredPost.date }}">{{ featuredPost.date }}</time>
+        <h1 class="featured__title">
+          <span>{{ featuredPost.title }}</span>
+        </h1>
+        <div class="featured__content">
+          {{ featuredPost.content | truncate(300) | safe }}
+        </div>
+      </div>
+    </section>
+
     {% include "partials/components/post-list.njk" %}
     {% include "partials/components/pagination.njk" %}
   </main>
