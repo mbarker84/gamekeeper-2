@@ -8,6 +8,7 @@ permalink: '/admin/index.html'
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="stylesheet" href="./scss/global.scss" />
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
@@ -18,8 +19,8 @@ permalink: '/admin/index.html'
   <script src="/admin/util.js"></script>
   <script src="/admin/templates.js"></script>
   <script src="/admin/previews.js" type="text/babel"></script>
-  <script>
+  {# <script>
     CMS.registerPreviewStyle(`{% include "assets/css/global.css" %}`, { raw: true })
-  </script>
+  </script> #}
 </body>
 </html>
